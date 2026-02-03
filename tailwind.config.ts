@@ -11,6 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gold: {
+          DEFAULT: "#C8A96E",
+          light: "#D4BA85",
+          dark: "#B89A5F",
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        mono: ["var(--font-dm-mono)", "monospace"],
+        victorian: ["var(--font-im-fell-english)", "Georgia", "serif"],
       },
     },
   },
