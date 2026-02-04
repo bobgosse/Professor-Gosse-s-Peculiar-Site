@@ -50,6 +50,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
                 character: true,
               },
             },
+            elements: {
+              include: {
+                element: true,
+              },
+            },
           },
         },
         schedule: {
