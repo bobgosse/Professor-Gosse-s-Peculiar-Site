@@ -60,6 +60,7 @@ export interface BreakdownSheet {
   pageCount: string | null;
   description: string | null;
   storyDay: number | null;
+  cameraSetups: number | null;
   isFlashback: boolean;
   sortOrder: number;
   stunts: string | null;

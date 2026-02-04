@@ -192,6 +192,7 @@ model BreakdownSheet {
   pageCount    String?  // In eighths, e.g., "3/8", "1 2/8"
   description  String?  @db.Text
   storyDay     Int?
+  cameraSetups Int?     // Estimated number of camera setups/shots for coverage
   isFlashback  Boolean  @default(false)
   sortOrder    Int      @default(0)
   createdAt    DateTime @default(now())

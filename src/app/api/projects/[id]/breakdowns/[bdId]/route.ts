@@ -102,6 +102,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
       pageCount,
       description,
       storyDay,
+      cameraSetups,
       isFlashback,
       stunts,
       extras,
@@ -142,6 +143,7 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     if (pageCount !== undefined) updateData.pageCount = pageCount?.trim() || null;
     if (description !== undefined) updateData.description = description?.trim() || null;
     if (storyDay !== undefined) updateData.storyDay = storyDay ? parseInt(storyDay, 10) : null;
+    if (cameraSetups !== undefined) updateData.cameraSetups = cameraSetups ? parseInt(cameraSetups, 10) : null;
     if (isFlashback !== undefined) updateData.isFlashback = isFlashback || false;
     if (stunts !== undefined) updateData.stunts = stunts?.trim() || null;
     if (extras !== undefined) updateData.extras = extras?.trim() || null;

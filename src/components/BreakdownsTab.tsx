@@ -67,6 +67,7 @@ function BreakdownForm({
     pageCount: breakdown?.pageCount || "",
     description: breakdown?.description || "",
     storyDay: breakdown?.storyDay?.toString() || "",
+    cameraSetups: breakdown?.cameraSetups?.toString() || "",
     isFlashback: breakdown?.isFlashback || false,
     stunts: breakdown?.stunts || "",
     extras: breakdown?.extras || "",
@@ -114,6 +115,7 @@ function BreakdownForm({
         intExt: form.intExt as "INT" | "EXT" | undefined || undefined,
         dayNight: form.dayNight as BreakdownSheet["dayNight"] || undefined,
         storyDay: form.storyDay ? parseInt(form.storyDay, 10) : undefined,
+        cameraSetups: form.cameraSetups ? parseInt(form.cameraSetups, 10) : undefined,
         castIds: Array.from(selectedCast),
         elementIds: Array.from(selectedElements),
       });
@@ -261,6 +263,17 @@ function BreakdownForm({
               value={form.storyDay}
               onChange={(e) => setForm({ ...form, storyDay: e.target.value })}
               min="1"
+              className="w-full px-3 py-2 bg-stone-800 border border-stone-700 rounded text-white text-sm focus:outline-none focus:ring-2 focus:ring-gold"
+            />
+          </div>
+          <div className="flex-1">
+            <label className="block text-sm text-stone-400 mb-1">Camera Setups</label>
+            <input
+              type="number"
+              value={form.cameraSetups}
+              onChange={(e) => setForm({ ...form, cameraSetups: e.target.value })}
+              min="0"
+              placeholder="Est. shots"
               className="w-full px-3 py-2 bg-stone-800 border border-stone-700 rounded text-white text-sm focus:outline-none focus:ring-2 focus:ring-gold"
             />
           </div>
@@ -515,6 +528,11 @@ export function BreakdownsTab({
               {/* Page count */}
               <div className="w-16 font-mono text-sm text-stone-400 text-right">
                 {breakdown.pageCount || "—"}
+              </div>
+
+              {/* Camera setups */}
+              <div className="w-20 text-sm text-stone-500 text-right">
+                {breakdown.cameraSetups != null ? `${breakdown.cameraSetups} setups` : "—"}
               </div>
 
               {/* Cast count */}
